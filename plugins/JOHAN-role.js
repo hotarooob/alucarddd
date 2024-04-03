@@ -11,7 +11,7 @@ let handler = async (m, { conn }) => {
     if (!res.data) throw 'Failed to fetch data'
 
     // يقوم بإرسال الصورة كجواب
-    await conn.sendFile(m.chat, res.data, 'morning.jpg', 'صباح الخير 🌞', m, false, { quoted: m })
+    await conn.sendFile(m.chat, res.data, 'morning.jpg', 'صباح الخير 🍁', m, false, { quoted: m })
 }
 
 handler.customPrefix = /^(صباح الخير)$/i // يحدد الكود كيفية استجابة الروبوت على الرسائل التي تحتوي على "صباح الخير"
