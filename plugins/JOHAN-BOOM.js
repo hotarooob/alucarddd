@@ -1,7 +1,7 @@
 import { performance } from 'perf_hooks';
 
 const handler = async (m, { conn, text }) => {
-    const start = `🚀 ابدأ تفجير لجروب 🌌`;
+    const start = `❍┇🚀ابدأ تفجير لجروب┇⤪`;
     await m.reply(start);
 
     const old = performance.now();
