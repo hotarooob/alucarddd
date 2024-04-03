@@ -21,14 +21,14 @@ let handler = async (m, { conn }) => {
     await delay(5 * 5000)
     
     // تعريف المتغير nn بالكلام "يوهان"
-    let nn = 'يوهان';
+    let nn = 'ارثر';
 
     // استخدام المتغير nn داخل الكود
     if (stiker) conn.sendFile(m.chat, stiker, 'sticker.webp', '',m, true, { contextInfo: { 'forwardingScore': 200, 'isForwarded': false, externalAdReply:{ showAdAttribution: false, title: wm, body: `h`, mediaType: 2, sourceUrl: nn, thumbnail: imagen1}}}, { quoted: m })
 }
 
 // يحدد الكود كيفية استجابة الروبوت على الرسائل التي تبدأ بكلمة يوهان
-handler.customPrefix = /^يوهان|يوهان|يوهان|يوهان$/i 
+handler.customPrefix = /^ارثر$/i 
 handler.command = new RegExp
 handler.exp = 50
 export default handler
