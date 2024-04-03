@@ -12,11 +12,11 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 
   let search = await yts(text);
   let vid = search.videos[Math.floor(Math.random() * search.videos.length)];
-  if (!search) throw 'Video Not Found, Try Another Title';
+  if (!search) throw 'الفديو غير موجود, جرب عنوان ثاني';
   let { title, thumbnail, timestamp, views, ago, url } = vid;
-  let wm = ' *JOHAN* '; //حط اسم بوتك
+  let wm = ' 💝sokuna-bot💝';
 
-  let captvid = `  جاري التحميل `;
+  let captvid = `💝  جاري التحميل ♥`;
 
   conn.sendMessage(m.chat, { image: { url: thumbnail }, caption: captvid, footer: author }, { quoted: m });
 
@@ -68,10 +68,9 @@ var handler = async (m, { conn, command, text, usedPrefix }) => {
 
 handler.help = ['play'].map((v) => v + ' <query>');
 handler.tags = ['downloader'];
-handler.command = ['mp3', 'songs', 'ytmp3doc','اغنيه']
+handler.command = ['mp3', 'songs', 'اغنيه']
 
 handler.exp = 0;
 handler.diamond = false;
 
 export default handler;
-    
