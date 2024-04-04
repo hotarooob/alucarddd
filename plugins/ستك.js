@@ -12,7 +12,7 @@ let text
         text = args.slice(0).join(" ")
     } else if (m.quoted && m.quoted.text) {
         text = m.quoted.text
-    } else throw "مثال \n .استك ايرين اخويا"
+    } else throw "مثال \n ✤┃.استيك ايرين عمك┃✤"
    if (!text) return m.reply('النص فين يحب ؟')
    if (text.length > 30) return m.reply('اخرك 30 حرف ياحب')
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/d7ae77d1178f9de50825c.jpg')
@@ -50,6 +50,6 @@ let text
 
 handler.help = ['qc']
 handler.tags = ['sticker']
-handler.command = /^ستكر)$/i
+handler.command = /^ستيك)$/i
 
 export default handler
