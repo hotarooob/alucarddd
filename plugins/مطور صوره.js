@@ -37,15 +37,15 @@ let readMore = more.repeat(900)
 let str = ` 
 
   مرحبا يا↞${taguser}
- *┊┃ ┗━━━━━━━━━━━━━━•
-┊┃ ┏━━━━━━━━━━━━━━•* 
-     *رقم المطور للضروره فقط✓┃🚫┃┊*
+┊┃ ┗━━━━━━━━━━━━━━•
+┊┃ ┏━━━━━━━━━━━━━━•
+ رقم المطور للضروره فقط✓┃🚫┃┊
 ┊┃ ┗━━━━━━━━━━━━━━•
 ┊┃ ┏━━━━━━━━━━━━━━•
 
 *𝑨𝑹𝑻𝑯𝑼𝑹*
 https://wa.me/967773685143
- *`.trim();
+ `.trim();
 
 conn.sendMessage(m.chat, {
         video: { url: videoUrl }, caption: str,
@@ -53,9 +53,9 @@ conn.sendMessage(m.chat, {
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
-handler.help = ['بوت']
+handler.help = ['مطور']
 handler.tags = ['صاحب البوت']
-handler.command = ['مطور'] 
+handler.command = ['بوت'] 
 
 export default handler
 function clockString(ms) {
