@@ -1,5 +1,5 @@
 const handler = async (m, { conn, command, text }) => {
-  if (!text) throw `*اكتب اسم من تحب يا حب 😘​🤩​*`
+  if (!text) throw `*┃😫اكتب اسم من تحب يا حب┃✓​*`
   const lovePercentage = Math.floor(Math.random() * 100);
   const isHighLove = lovePercentage >= 50;
   const loveDescription = isHighLove ? "" : "";
