@@ -53,9 +53,9 @@ conn.sendMessage(m.chat, {
   gifPlayback: true,gifAttribution: 0
     }, { quoted: m });
 }; 
-handler.help = ['main']
-handler.tags = ['group']
-handler.command = ['المطور'] 
+handler.help = ['بوت']
+handler.tags = ['صاحب البوت']
+handler.command = ['مطور'] 
 
 export default handler
 function clockString(ms) {
