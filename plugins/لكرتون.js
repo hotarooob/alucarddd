@@ -105,13 +105,13 @@ function randomId() {
 let handler = async (m, { conn, usedPrefix, command }) => {
   conn.cartoon = conn.cartoon ? conn.cartoon : {};
   if (m.sender in conn.cartoon)
-    throw "لا تزال هناك عملية لم تكتمل يا صديقي. الرجاء الانتظار حتى تنتهي >//<";
+    throw "*❮لا تزال هناك عملية لم تكتمل يا صديقي. الرجاء الانتظار حتى تنتهي❯* >//<";
   let q = m.quoted ? m.quoted : m;
   let mime = (q.msg || q).mimetype || q.mediaType || "";
-  if (!mime) throw `أين هي الصورة التي تريد تحويلها لكرتون?`;
+  if (!mime) throw `*┊┃🚫┃✓أين هي الصورة التي تريد تحويلها لكرتون↞`;
   if (!/image\/(jpe?g|png)/.test(mime)) throw `Mime ${mime} tidak support`;
   else conn.cartoon[m.sender] = true;
-  m.reply("جاري تحويل الصورة لكرتون ...");
+  m.reply("❮جاري تحويل الصورة لكرتون ...❯");
   let img = await q.download?.();
   try {
     Cartoon(img).then(async (response) => {
@@ -120,7 +120,7 @@ let handler = async (m, { conn, usedPrefix, command }) => {
           m.chat,
           response.download.full,
           "",
-          "تمت العملية بنجاح♥  >//<",
+          "تمت العملية بنجاح✓  >//<",
           m
         );
         let name = await conn.getName(m.sender),

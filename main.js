@@ -271,28 +271,28 @@ async function connectionUpdate(update) {
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode;
 if (connection === 'close') {
     if (reason === DisconnectReason.badSession) {
-        conn.logger.error(`[ ⚠ ]Incorrect session, please delete the folder ${global.authFile} and scan again.`);
+        conn.logger.error(`┊┃🚫┃┊Incorrect session, please delete the folder ${global.authFile} and scan again.`);
         //process.exit();
     } else if (reason === DisconnectReason.connectionClosed) {
-        conn.logger.warn(`[ ⚠ ] Connection closed, reconnecting...`);
+        conn.logger.warn(`┊┃🚫┃┊Connection closed, reconnecting...`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.connectionLost) {
-        conn.logger.warn(`[ ⚠ ] Lost connection to the server, reconnecting...`);
+        conn.logger.warn(`┊┃🚫┃┊ Lost connection to the server, reconnecting...`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.connectionReplaced) {
-        conn.logger.error(`[ ⚠ ] Connection replaced, another new session has been opened. Please log out of the current session first.`);
+        conn.logger.error(`┊┃🚫┃┊ Connection replaced, another new session has been opened. Please log out of the current session first.`);
         //process.exit();
     } else if (reason === DisconnectReason.loggedOut) {
-        conn.logger.error(`[ ⚠ ] Connection closed, please delete the folder ${global.authFile} and scan again.`);
+        conn.logger.error(`┊┃🚫┃┊ Connection closed, please delete the folder ${global.authFile} and scan again.`);
         //process.exit();
     } else if (reason === DisconnectReason.restartRequired) {
-        conn.logger.info(`[ ⚠ ] Reboot required, restart the server if you have any problems.`);
+        conn.logger.info(`┊┃🚫┃┊ Reboot required, restart the server if you have any problems.`);
         await global.reloadHandler(true).catch(console.error);
     } else if (reason === DisconnectReason.timedOut) {
-        conn.logger.warn(`[ ⚠ ] Connection timed out, reconnecting...`);
+        conn.logger.warn(`┊┃🚫┃┊ Connection timed out, reconnecting...`);
         await global.reloadHandler(true).catch(console.error);
     } else {
-        conn.logger.warn(`[ ⚠ ] Unknown disconnection reason. ${reason || ''}: ${connection || ''}`);
+        conn.logger.warn(`┊┃🚫┃┊ Unknown disconnection reason. ${reason || ''}: ${connection || ''}`);
         await global.reloadHandler(true).catch(console.error);
     }
 }
@@ -329,14 +329,14 @@ global.reloadHandler = async function(restatConn) {
     conn.ev.off('creds.update', conn.credsUpdate);
   }
 
-  conn.welcome = '👋 ة¡منور!\n@user';
-  conn.bye = '👋 ¡نراك لاحقا!\n@user';
-  conn.spromote = '*[ ℹ️ ] @user اصبح مشرفا*';
-  conn.sdemote = '*[ ℹ️ ] @user لم يعد مشرفا.*';
-  conn.sDesc = '*[ ℹ️ ] تم تغيير وصف لمجموعة.*';
-  conn.sSubject = '*[ ℹ️ ] تم تغيير اسم المجموعة.*';
-  conn.sIcon = '*[ ℹ️ ] تم تغيير خلفية المجموعة.*';
-  conn.sRevoke = '*[ ℹ️ ] تم تغيير رابط المممجموعة.*';
+  conn.welcome = '👋 .ة¡منور!\n@user';
+  conn.bye = '👋 ¡نراك. لاحقا!\n@user';
+  conn.spromote = '*↞ @user اصبح مشرفا✓┃🚫┃┊*';
+  conn.sdemote = '*↞ @user لم يعد مشرفا✓┃🚫┃┊*';
+  conn.sDesc = '*↞ تم تغيير وصف لمجموعة✓┃🚫┃┊*';
+  conn.sSubject = '*↞ تم تغيير اسم المجموعة✓┃🚫┃┊*';
+  conn.sIcon = '*↞ تم تغيير خلفية المجموعة✓┃🚫┃┊*';
+  conn.sRevoke = '*↞ تم تغيير رابط المممجموعة✓┃🚫┃┊*';
 
   conn.handler = handler.handler.bind(global.conn);
   conn.participantsUpdate = handler.participantsUpdate.bind(global.conn);
@@ -490,7 +490,7 @@ setInterval(async () => {
   if (stopped === 'close' || !conn || !conn.user) return;
   const _uptime = process.uptime() * 1000;
   const uptime = clockString(_uptime);
-  const bio = `𝐵𝛩𝑇-𝑁𝐸𝑍𝑈𝐾𝛩 [ ⏳ ] Uptime: ${uptime}`;
+  const bio = ` ❮ الوقت❗️Uptime:┃✜❯* ${uptime}`;
   await conn.updateProfileStatus(bio).catch((_) => _);
 }, 60000);
 function clockString(ms) {

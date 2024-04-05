@@ -5,9 +5,9 @@ let handler = async (m, { conn }) => {
   let cita = data[Math.floor(Math.random() * data.length)]
   
   let cowi = await(await fetch(cita.cowo)).buffer()
-  await conn.sendFile(m.chat, cowi, '', '*لــلـولـد*', m)
+  await conn.sendFile(m.chat, cowi, '', '〈 ورع 〉↞', m)
   let ciwi = await(await fetch(cita.cewe)).buffer()
-  await conn.sendFile(m.chat, ciwi, '', '*لــلـبـنـت*', m)
+  await conn.sendFile(m.chat, ciwi, '', '〈 ورعه 〉↞', m)
 }
 handler.help = ['ppcouple', 'ppcp']
 handler.tags = ['internet']

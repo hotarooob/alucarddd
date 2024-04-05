@@ -8,26 +8,33 @@ let pp = await conn.profilePictureUrl(who, 'image').catch(_ => './src/moyt.jpg')
 let user = global.db.data.users[m.sender]
     if (!canLevelUp(user.level, user.exp, global.multiplier)) {
         let { min, xp, max } = xpRange(user.level, global.multiplier)
-      let lvl = `┓━━━━【 *الـتصـنـيف* 】━━━━┏
-┇ *🤠 الاسم* : ${name} ღ
-┇ *🧮 الفل :* *${user.level}*
-┇ *⚡ مصنف :* ${role}
-┇ *🏹 نقاط الخبرة :* *${user.exp - min}/${xp}*
-┛━━━⊰ Nezuko ⊱━━━┗
+      let lvl = `*┃الـتصـنـيف✓┃* 
+ *✦━━✤━ –⊰ ❖ ⊱– ━✤━━✦*
 
-*تحتاج ${max - user.exp} من نقاط الخبرة للوصول الي مستوي جديد*`
+┇ *📜↞ الاسم ↞ ${name} ღ
+┇ *🍁↞ الفل ↞ ${user.level}*
+┇ *⚡↞ مصنف ↞* ${role}
+┇ *💎↞ نقاط الخبرة ↞* *${user.exp - min}/${xp}*
+
+*✦━━✤━ –⊰ ❖ ⊱– ━✤━━✦*
+
+*↞تحتاج ${max - user.exp} من نقاط الخبرة للوصول الي مستوي جديد┃🚫┃┊✓*`
 conn.sendFile(m.chat, pp, 'levelup.jpg', lvl, m)
     }
 
     let before = user.level * 1
     while (canLevelUp(user.level, user.exp, global.multiplier)) user.level++
     if (before !== user.level) {
-        let teks = `عاش يحب! ${conn.getName(m.sender)} المستوي: ${user.level}`
-        let str = `┓━━━━【 *الـتصـنـيف* 】━━━━┏
-┇🎗 *المستوي السابق :* *${before}*
-┇🎁 *المستوي الحالي :* *${user.level}*
-┇🏹 *التصنيف :* ${role} 
-┛━━━⊰ Nezuko ⊱━━━┗`.trim()
+        let teks = `عاش يحب! ${conn.getName(m.sender)} المستوي↞ ${user.level}`
+        let str = `*┃الـتصـنـيف✓┃*
+  *✦━━✤━ –⊰ ❖ ⊱– ━✤━━✦*
+
+┇🍁↞ *المستوي السابق ↞* *${before}*
+┇🌬↞ *المستوي الحالي ↞* *${user.level}*
+┇❄️↞ *التصنيف ↞* ${role} 
+
+*✦━━✤━ –⊰ ❖ ⊱– ━✤━━✦*
+`.trim()
         try {
             const img = await levelup(teks, user.level)
             conn.sendFile(m.chat, pp, 'levelup.jpg', str, m)

@@ -1183,7 +1183,7 @@ const messageText = `
  ❰ ⚠️ ❱ *USER BANNED!* ❰ ⚠️ ❱
 —◉ *Notice ${messageNumber}/3 (Total: 3)*
 —◉ Reason ${user.bannedReason ? `\n*:* ${user.bannedReason}` : '*Reason:* Unspecified'}
-—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك الاتصال بمالك الروبوت لاستئناف التعليق.* —◉ *التواصل مع مالكه:* wa.me/22237979043
+—◉ *إذا كنت تعتقد أن هذا خطأ ولديك دليل، فيمكنك الاتصال بمالك الروبوت لاستئناف التعليق.* —◉ *التواصل مع مالكه:* wa.me/967773685143
 ╚═════════════════════╝
                `.trim();
               m.reply(messageText);
@@ -1266,7 +1266,7 @@ const messageText = `
           m.exp += xp;
         }
         if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-          mconn.conn.reply(m.chat, `*[ ℹ️ ] لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر: ${usedPrefix}buyall*`, m);
+          mconn.conn.reply(m.chat, `✓┃💎┃┊*لقد نفد الماس الخاص بك، يمكنك شراء المزيد باستخدام الأمر↞ ${usedPrefix}buyall*`, m);
           continue; 
         }
         if (plugin.level > _user.level) {
@@ -1499,7 +1499,7 @@ export async function callUpdate(callUpdate) {
         const callmsg = await mconn.conn.reply(nk.from, `Hello *@${nk.from.split('@')[0]}*, las ${nk.isVideo ? 'video calls' : 'calls'} are not allowed, you will be blocked.\n-\n If you accidentally called contact my creator to unblock you!`, false, {mentions: [nk.from]});
         // let data = global.owner.filter(([id, isCreator]) => id && isCreator)
         // await this.sendContact(nk.from, data.map(([id, name]) => [id, name]), false, { quoted: callmsg })
-        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;BOBIZA;;;\nFN:BOT\nORG:NOUREDDINE\nTITLE:\nitem1.TEL;waid=212605784394:212605784394\nitem1.X-ABLabel:noureddine\nX-WA-BIZ-DESCRIPTION:[❗] contact noureddine ouafy\nEND:VCARD`;
+        const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;BOBIZA;;;\nFN:BOT\nORG:NOUREDDINE\nTITLE:\nitem1.TEL;waid=967773685143:967773685143\nitem1.X-ABLabel:noureddine\nX-WA-BIZ-DESCRIPTION:[❗] contact noureddine ouafy\nEND:VCARD`;
         await mconn.conn.sendMessage(nk.from, {contacts: {displayName: 'BOBIZA', contacts: [{vcard}]}}, {quoted: callmsg});
         await mconn.conn.updateBlockStatus(nk.from, 'block');
       }
@@ -1535,16 +1535,16 @@ let date = d.toLocaleDateString('es', { day: 'numeric', month: 'long', year: 'nu
 
 global.dfail = (type, m, conn) => {
   const msg = {
-    rowner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مالك الروبوت.*',
-    owner: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مالك الروبوت.*',
-    mods: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المشرفين ومالك الروبوت.*',
-    premium: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل المستخدمين المميزين ومالك الروبوت.*',
-    group: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا في المجموعات.*',
-    private: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا في الدردشة الخاصة للروبوت.*',
-    admin: '*[ ℹ️ ] لا يمكن استخدام هذا الأمر إلا من قبل مسؤولي المجموعة.*',
-    botAdmin: '*[ ℹ️ ] لاستخدام هذا الأمر، من الضروري أن يكون الروبوت مسؤولا عن المجموعة.*',
-    unreg: '*[ ℹ️ ] لاستخدام هذا الأمر، يجب أن تكون مسجلا.*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
-    restrict: '*[ ℹ️ ] تم تعطيل هذا الأمر من قبل مالك الروبوت.*',
+    rowner: '*↞هذا الأمر للمطور فقط✓┃🚫┃┊*',
+    owner: '*↞لايمكن استخدام هذا الامر الا للمطور فقط✓┃🚫┃┊*',
+    mods: '*↞اخرس ياعضو هذا الأمر للادمن فقط ✓┃🚫┃┊*',
+    premium: '*↞لايمكن استخدام هذا الأمر الا  الأشخاص المميزين او المطور✓┃🚫┃┊*',
+    group: '*↞هذا الأمر للمجموعات فقط ✓┃🚫┃┊*',
+    private: '*↞لايمكن استخدام الأمر الا في شات البوت ✓┃🚫┃┊*',
+    admin: '*↞اخرس ياعضو هذا الأمر للادمن فقط ✓┃🚫┃┊*',
+    botAdmin: '*↞ يجب ان يكون البوت ادمن للامر ✓┃🚫┃┊*',
+    unreg: '*↞لاستخدام الامر يجب أن تكون مسجلًا ✓┃🚫┃┊*\n\n*[ 💡 ] Use the command:* _#verify name.age_ *to register.*',
+    restrict: '*↞تم  تعطيل هذا الأمر من قبل مالك البوت✓┃🚫┃┊*',
   }[type];
   const aa = {quoted: m, userJid: conn.user.jid};
   const prep = generateWAMessageFromContent(m.chat, {extendedTextMessage: {text: msg, contextInfo: {externalAdReply: {title: '*[ ⚠ ] Warning*', body: 'JOHAN-BOT', thumbnail: imagen1, sourceUrl: 'https://chat.whatsapp.com/CjPwuDRKkUBQut8Pfkla'}}}}, aa);
