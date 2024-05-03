@@ -6,10 +6,10 @@ const prem = 200000
 
 let handler = async (m, {conn, isPrems }) => {
   let time = global.db.data.users[m.sender].lastclaim + 86400000
-  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `🎁 *لقد تلقيت هديتك اليوميه بالفعل*\n\n🕚 انتظر قليلاً*${msToTime(time - new Date())}* `
+  if (new Date - global.db.data.users[m.sender].lastclaim < 86400000) throw `🎁 *خدت هديتك انهرده كد خلاص*\n\n🕚  اصبر شويه يعم متقباش طماع*${msToTime(time - new Date())}* `
   global.db.data.users[m.sender].exp += isPrems ? prem : free
   m.reply(`
-🌺 *مبروك هديتك اليوميه*
+😉 *مبروك الهديه يعم*
 
 ▢ *لقد حصلت علي:*
 🆙 *اكسبي* : +${isPrems ? prem : free}`)
@@ -33,5 +33,5 @@ function msToTime(duration) {
   minutes = (minutes < 10) ? "0" + minutes : minutes
   seconds = (seconds < 10) ? "0" + seconds : seconds
 
-  return hours + " ساعات " + minutes + " دقائق"
+  return hours + " ساعات " + minutes + " دقايق"
 }
